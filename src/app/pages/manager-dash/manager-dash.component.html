@@ -1,1 +1,93 @@
-<p>manager-dash works!</p>
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+
+
+			<span class="text">Haseetha</span>
+		</a>
+		<a href="#" class="profile">
+			<img src="assets/images/girl.png" alt="Profile Pic">
+		</a>
+		
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#" onclick="showDashboard()">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-user-plus'></i>
+					<span class="text">Inquiries</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Issues</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">View Task</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="#">
+				<div class="form-input">
+					
+					<button type="submit" class="search-btn" style="display: none;"></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title" id="dashboard-section">
+				<div class="left">
+					<h1>Dashboard</h1>
+				</div>
+			</div>
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->

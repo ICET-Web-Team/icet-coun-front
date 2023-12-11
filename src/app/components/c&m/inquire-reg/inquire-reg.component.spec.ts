@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ManagerDashComponent } from './manager-dash.component';
 
-describe('ManagerDashComponent', () => {
-  let component: ManagerDashComponent;
-  let fixture: ComponentFixture<ManagerDashComponent>;
+import { InquireRegComponent } from './inquire-reg.component';
+
+describe('InquireRegComponent', () => {
+  let component: InquireRegComponent;
+  let fixture: ComponentFixture<InquireRegComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManagerDashComponent]
+      imports: [InquireRegComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ManagerDashComponent);
+    fixture = TestBed.createComponent(InquireRegComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
