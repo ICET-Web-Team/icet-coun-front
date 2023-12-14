@@ -68,4 +68,39 @@ export class InquireRegComponent {
       element.disabled = disable;
     });
   }
+
+  changeDarkMood(checked: boolean) {
+    console.log('Methhod Called...........');
+    var customFields = document.querySelectorAll('.customField');
+    var box = document.querySelectorAll('.box-part');
+    var lable = document.querySelectorAll('.lable');
+    var floatingLabel = document.getElementById('floatingLabel')?.innerHTML;
+
+    if (checked) {
+      customFields.forEach(function (field) {
+        field.classList.add('dark-mode');
+      });
+      // add dark mode to mainBox
+      box.forEach(function (field) {
+        field.classList.add('dark-mode');
+      });
+      // add dark mode to lable
+      lable.forEach(function (field) {
+        field.classList.add('dark-mode');
+      });
+      // floatingLabel.classList.add("dark-mode");
+    } else {
+      customFields.forEach(function (field) {
+        field.classList.remove('dark-mode');
+      });
+      // remove dark mode to mainBox
+      box.forEach(function (field) {
+        field.classList.remove('dark-mode');
+      });
+      // remove dark mode to lable
+      lable.forEach(function (field) {
+        field.classList.remove('dark-mode');
+      });
+    }
+  }
 }

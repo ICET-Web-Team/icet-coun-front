@@ -1,3 +1,7 @@
+.box-part {
+  background-color: rgb(211, 235, 205);
+  border-radius: 20px;
+}
 .lable {
   font-size: 1rem;
   font-weight: 500;
@@ -14,7 +18,7 @@
 .customField {
   border: none;
   outline: none;
-  border-bottom: 2px solid #ff8d83;
+  border-bottom: 2px solid rgb(211, 235, 205);
   background-color: rgba(255, 255, 255, 0.307);
   border-radius: 5px;
   padding: 8px;
@@ -23,5 +27,32 @@
 
 .customField:hover {
   transition-duration: 0.5s;
-  box-shadow: 0 5px 16px 0 #ff8d8392, 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 5px 16px 0 rgb(182, 242, 167), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.customField.dark-mode {
+  color: #fff;
+}
+
+.box-part.dark-mode{
+  background-color: rgba(211, 235, 205, 0.315);
+  border-radius: 20px;
+}
+
+.lable.dark-mode {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.body.dark-mode{
+  color: white;
+}
+
