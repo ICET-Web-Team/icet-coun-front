@@ -1,7 +1,7 @@
 .card-style {
     max-width: 100rem;
-    background-color: rgb(247, 247, 247);
-    border: 10px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border: 10px solid rgb(247, 250, 247);
     filter: drop-shadow(2px 2px 2px #222);
 }
 
@@ -23,4 +23,7 @@
 
 .input-icon-style {
     color: aliceblue;
+}
+.image-background{
+    background-color: rgb(241, 243, 246);
 }
