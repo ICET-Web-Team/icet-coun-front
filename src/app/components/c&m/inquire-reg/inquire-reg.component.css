@@ -11,6 +11,9 @@
   font-weight: 500;
   color: #767676;
 }
+.floatLable{
+  font-weight: 600;
+}
 
 .field {
   margin-top: 5px;
