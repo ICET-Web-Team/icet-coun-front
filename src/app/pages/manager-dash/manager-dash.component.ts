@@ -2,6 +2,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {OnInit } from '@angular/core';
+import { InquireRegComponent } from '../../components/c&m/inquire-reg/inquire-reg.component';
 
 @Component({
   selector: 'app-manager-dash',
@@ -83,11 +84,17 @@ export class ManagerDashComponent implements OnInit {
 
   private setupSwitchMode() {
     const switchMode = document.getElementById('switch-mode') as HTMLInputElement;
+    const inquireDarkMode= new InquireRegComponent();
+    const routerBody = document.getElementById('router-body');
 
     switchMode.addEventListener('change', () => {
       if (switchMode.checked) {
+        routerBody?.classList.add('dark-mode');
+        inquireDarkMode.changeDarkMood(true);
         document.body.classList.add('dark');
       } else {
+        routerBody?.classList.remove('dark-mode');
+        inquireDarkMode.changeDarkMood(false);
         document.body.classList.remove('dark');
       }
     });
