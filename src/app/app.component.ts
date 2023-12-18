@@ -13,4 +13,9 @@ import { ManagerDashComponent } from "./pages/manager-dash/manager-dash.componen
 })
 export class AppComponent {
   title = 'icet-coun-front';
+
+  showAlter(){
+    console.log('......clicked alter.........');
+    alert('do');
+  }
 }

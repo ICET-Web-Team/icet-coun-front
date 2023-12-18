@@ -8,7 +8,7 @@ export const routes: Routes = [
         component:ChartAppComponent 
     },
     {
-        path:'reg',
+        path:'inquire-registration',
         component : InquireRegComponent
     }
 ];
