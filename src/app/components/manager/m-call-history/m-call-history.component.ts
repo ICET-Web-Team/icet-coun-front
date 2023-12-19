@@ -13,5 +13,7 @@ export class MCallHistoryComponent implements OnInit{
    
   }
     img1="./assets/images/WhatsApp Image 2023-09-27 at 11.17.39.jpg";
+    img2="./assets/images/WhatsApp Image 2023-09-10 at 09.17.26.jpg";
+    img3="./assets/images/sha.jpg"
     iconMissed="./assets/images/icons8-missed-call-16.png";
 }

@@ -8,11 +8,22 @@
     left: 30%;
     top: 10%;
     border-radius:1px;
-    box-shadow: 0.5px 1px 2px 1px rgba(73, 52, 212, 0.329);
+    box-shadow: 0.5px 1px 2px 1px rgba(73, 52, 212, 0.228);
 }
 
 
  /* Card style start */
+ .topic-card {
+    width: 100%;
+    height: 13%;
+    background-color:white;
+    position: relative;
+    left: 0%;
+    top: 0%;
+    border-radius: 1px;
+    box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.326);
+    margin-bottom: 4px; 
+}
 .myCard {
     width: 100%;
     height: 13%;
@@ -21,8 +32,11 @@
     left: 0%;
     top: 0%;
     border-radius: 1px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.265);
+    box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.326);
     margin-bottom: 4px; 
+}
+.myCard:hover{
+    background-color: #A29BFE;
 }
  /* Card style end */
 
