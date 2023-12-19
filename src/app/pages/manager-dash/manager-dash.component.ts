@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
   styleUrl: './manager-dash.component.css',
 })
 export class ManagerDashComponent implements OnInit {
-
   constructor(private router: Router) {}
   navigateComponent(value: String) {
     switch (value) {
@@ -38,8 +37,14 @@ export class ManagerDashComponent implements OnInit {
       case 'logout':
         this.router.navigate(['/inquire-registration']);
         break;
-      default:
+      case 'callhistory':
+        this.router.navigate(['/call-history']);
+        break;
+      case 'issues':
         this.router.navigate(['/inquire-registration']);
+        break;
+      default:
+        console.log('Not definde URL');
     }
   }
 
