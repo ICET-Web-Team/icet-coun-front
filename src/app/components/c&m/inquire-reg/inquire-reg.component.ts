@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +8,26 @@ import { CommonModule } from '@angular/common';
   templateUrl: './inquire-reg.component.html',
   styleUrl: './inquire-reg.component.css',
 })
-export class InquireRegComponent {
+export class InquireRegComponent implements OnInit {
+  ngOnInit(): void {
+    const dateNowElement: HTMLElement | null =
+      document.getElementById('dateNow');
+    if (dateNowElement) {
+      const currentDate: string = this.getCurrentDate();
+      dateNowElement.innerHTML = currentDate;
+    }
+  }
+
+  private getCurrentDate(): string {
+    const dateTime: Date = new Date();
+    return dateTime.toLocaleDateString();
+  }
+
+  // getCurrentDate() {
+  //   const dateTime = new Date;
+  //   return dateTime.toLocaleDateString();
+  // }
+
   phoneNumberValidation(selectObject: HTMLInputElement) {
     var value = selectObject.value;
     if (value[0] == '0' && value[1] == '7') {
@@ -67,5 +86,40 @@ export class InquireRegComponent {
     elements.forEach((element) => {
       element.disabled = disable;
     });
+  }
+
+  changeDarkMood(checked: boolean) {
+    console.log('Methhod Called...........');
+    var customFields = document.querySelectorAll('.customField');
+    var box = document.querySelectorAll('.box-part');
+    var lable = document.querySelectorAll('.lable');
+    var floatingLabel = document.getElementById('floatingLabel')?.innerHTML;
+
+    if (checked) {
+      customFields.forEach(function (field) {
+        field.classList.add('dark-mode');
+      });
+      // add dark mode to mainBox
+      box.forEach(function (field) {
+        field.classList.add('dark-mode');
+      });
+      // add dark mode to lable
+      lable.forEach(function (field) {
+        field.classList.add('dark-mode');
+      });
+      // floatingLabel.classList.add("dark-mode");
+    } else {
+      customFields.forEach(function (field) {
+        field.classList.remove('dark-mode');
+      });
+      // remove dark mode to mainBox
+      box.forEach(function (field) {
+        field.classList.remove('dark-mode');
+      });
+      // remove dark mode to lable
+      lable.forEach(function (field) {
+        field.classList.remove('dark-mode');
+      });
+    }
   }
 }
