@@ -1,0 +1,34 @@
+.card-style {
+    max-width: 100rem;
+    background-color: rgb(255, 255, 255);
+    border: 10px solid rgb(247, 250, 247);
+    filter: drop-shadow(2px 2px 2px #222);
+}
+
+.card-sizing {
+    max-width: 70%;
+}
+
+.logo-style {
+    width: 70%;
+}
+
+.subContent-style {
+    font-size: small;
+}
+
+.input-style {
+    background-color: rgb(82, 171, 75);
+}
+
+.input-icon-style {
+    color: aliceblue;
+}
+.image-background{
+    background-color: rgb(241, 243, 246);
+}
+.login-image-style{
+    object-fit: fill; 
+    width: 100%; 
+    height: 100%;
+}
