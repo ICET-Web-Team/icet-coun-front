@@ -2,8 +2,8 @@
  /* The main box style start  */
  .mainWrap {
     position: absolute;
-    width: 50%;
-    height: 80%;
+    width: 60%;
+    height: 85%;
     background-color:white;
     left: 30%;
     top: 10%;
@@ -38,6 +38,8 @@
 .myCard:hover{
     background-color: #A29BFE;
 }
+
+
  /* Card style end */
 
     
