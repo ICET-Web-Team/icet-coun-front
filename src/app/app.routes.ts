@@ -10,7 +10,7 @@ export const routes: Routes = [
         component:ChartAppComponent 
     },
    {
-    path:'counsill-call-history',
+    path:'counsellor-call-history',
     component:CCallHistoryComponent
    },
    {
