@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { ManagerDashComponent } from './pages/manager-dash/manager-dash.component';
 import { ChartAppComponent } from './components/manager/student_progress/chart-app/chart-app.component';
-import { CallsComponent } from './components/c&m/call-history/calls.component';
+import { CCallHistoryComponent } from './components/counsellor/c-call-history/c-call-history.component';
 
 export const routes: Routes = [
     {
@@ -9,7 +9,7 @@ export const routes: Routes = [
         component:ChartAppComponent 
     },
    {
-    path: 'call-history',
-    component:CallsComponent
+    path:'call-history',
+    component:CCallHistoryComponent
    }
 ];

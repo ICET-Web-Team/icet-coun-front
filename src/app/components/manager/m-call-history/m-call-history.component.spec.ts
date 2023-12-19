@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CallsComponent } from './calls.component';
+import { MCallHistoryComponent } from './m-call-history.component';
 
-describe('CallsComponent', () => {
-  let component: CallsComponent;
-  let fixture: ComponentFixture<CallsComponent>;
+describe('MCallHistoryComponent', () => {
+  let component: MCallHistoryComponent;
+  let fixture: ComponentFixture<MCallHistoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CallsComponent]
+      imports: [MCallHistoryComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CallsComponent);
+    fixture = TestBed.createComponent(MCallHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
