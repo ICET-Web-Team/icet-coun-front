@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { InquireRegComponent } from '../../components/c&m/inquire-reg/inquire-reg.component';
 import { Router } from '@angular/router';
+import { MCallHistoryComponent } from '../../components/manager/m-call-history/m-call-history.component';
 
 @Component({
   selector: 'app-manager-dash',
@@ -130,16 +131,19 @@ export class ManagerDashComponent implements OnInit {
       'switch-mode'
     ) as HTMLInputElement;
     const inquireDarkMode = new InquireRegComponent();
+    const mCHistoryTableDarkMode=new MCallHistoryComponent();
     const routerBody = document.getElementById('router-body');
 
     switchMode.addEventListener('change', () => {
       if (switchMode.checked) {
         routerBody?.classList.add('dark-mode');
         inquireDarkMode.changeDarkMood(true);
+        mCHistoryTableDarkMode.changeDarkMode(true);
         document.body.classList.add('dark');
       } else {
         routerBody?.classList.remove('dark-mode');
         inquireDarkMode.changeDarkMood(false);
+        mCHistoryTableDarkMode.changeDarkMode(false);
         document.body.classList.remove('dark');
       }
     });

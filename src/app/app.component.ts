@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { ChartAppComponent } from './components/manager/student_progress/chart-app/chart-app.component';
 import { ManagerDashComponent } from "./pages/manager-dash/manager-dash.component";
+import { LoginComponent } from "./pages/login/login.component";
 
 
 
@@ -12,8 +13,7 @@ import { ManagerDashComponent } from "./pages/manager-dash/manager-dash.componen
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, ChartAppComponent, ManagerDashComponent]
-
+    imports: [CommonModule, RouterOutlet, ChartAppComponent, ManagerDashComponent, LoginComponent]
 })
 export class AppComponent {
   title = 'icet-coun-front';
