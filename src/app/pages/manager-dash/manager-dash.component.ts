@@ -143,7 +143,7 @@ export class ManagerDashComponent implements OnInit {
       } else {
         routerBody?.classList.remove('dark-mode');
         inquireDarkMode.changeDarkMood(false);
-        // mCHistoryTableDarkMode.changeDarkMode(false);
+        mCHistoryTableDarkMode.changeDarkMode(false);
         document.body.classList.remove('dark');
       }
     });
