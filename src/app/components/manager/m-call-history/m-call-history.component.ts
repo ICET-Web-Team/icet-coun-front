@@ -17,12 +17,12 @@ export class MCallHistoryComponent implements OnInit {
     if (check) {
       customFields.forEach(function (mode) {
         mode.classList.add('dark-mode');
-        console.log('method have called ....');
+        console.log('true');
       });
     } else {
       customFields.forEach(function (mode) {
         mode.classList.remove('dark-mode');
-        console.log('method have called ....');
+        console.log('method have called false');
       });
     }
   }

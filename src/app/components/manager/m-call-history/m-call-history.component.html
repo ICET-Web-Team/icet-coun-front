@@ -1,22 +1,54 @@
-  
- <!-- The Table start -->
- <div class="container-fluid" style="width: 90%;height: 800%; position: absolute !important;top: 92px !important;left: 5% !important; background-color:whitesmoke !important;border-radius:1px !important;  box-shadow: 0.5px 1px 2px 1px rgba(73, 52, 212, 0.228) !important;overflow: hidden;">
+<!-- The Table start -->
+<div class="container-fluid custome-container">
 
 
- 
+
   <!-- width: 150vh;height: 80vh; -->
-    <!-- Table header Start-->
-    <div class="topic-card customFields" style=" background-color:white !important; position: relative !important; width: 102.70% !important; height: 13% !important;right:1.40%;border-radius: 1px !important; box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.404) !important; margin-bottom: 0.59% !important; ">
-    <h6 style="position: relative !important; font-size: 12px !important;left: 8% !important;top:37% !important;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Counsellor Name</h6>
-        <h6 style="position: relative !important; font-size: 12px !important;left: 32% !important;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Type</h6>
-        <h6 style="position: relative !important; font-size: 12px !important;left:56% !important;bottom: 35% !important;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Date</h6>
-        <h6 style="position: relative !important; font-size: 12px !important;left: 86% !important;bottom: 67% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important; ">Time</h6> 
-    </div>
-    <!-- =========Table header End =========-->
+  <!-- Table header Start-->
+  <div class="topic-card header">
+    <h6
+      style="position: relative !important; font-size: 12px !important;left: 8% !important;top:37% !important;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Counsellor Name</h6>
+    <h6
+      style="position: relative !important; font-size: 12px !important;left: 32% !important;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Type</h6>
+    <h6
+      style="position: relative !important; font-size: 12px !important;left:56% !important;bottom: 35% !important;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Date</h6>
+    <h6
+      style="position: relative !important; font-size: 12px !important;left: 86% !important;bottom: 67% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important; ">
+      Time</h6>
+  </div>
+  <!-- =========Table header End =========-->
 
-    <!-- Table row 1 Start-->
- <div 
-style="
+  <!-- Table row 1 Start-->
+  <div
+onmouseover=" this.style.backgroundColor='#a29bfed7'"
+onmouseout=" this.style.backgroundColor='white'"
+class="cust-row">
+    <img [src]="iconMale" width="25px !important" height="25px !important" class="rounded float-start"
+      style="position: relative !important; top: 28% !important; left: 3% !important; border-radius: 100px !important;">
+    <h6
+      style="position: relative !important; font-size: 10px !important; left: 6% !important; top:40% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Hasindu Hesara</h6>
+    <img [src]="iconMissed" width="15px !important" height="15px !important" class="rounded float-start"
+      style="position: relative !important; top:6% !important; left: 25% !important; border-radius: 100px !important;">
+    <h6
+      style="position: relative !important; font-size: 10px !important; left: 26% !important; top: 8% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Missed Call</h6>
+    <h6
+      style="position: relative !important; font-size: 10px !important; left:56.12% !important; bottom:25% !important; text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.329) !important;">
+      Today</h6>
+    <h6
+      style="position: relative !important; font-size: 10px !important; left: 85% !important; bottom:56% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      02.08 PM</h6>
+    <span
+      style="position: relative !important; font-size: 19px !important; left: 95% !important; bottom: 109% !important;">...</span>
+  </div>
+  <!-- ========= Table row 1 End =========  -->
+
+  <!-- Table row 2 Start-->
+  <div style="
   position: relative; 
   width: 102.79% !important;
   height: 13% !important;
@@ -25,48 +57,30 @@ style="
   border-radius: 1px !important; 
   box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.381) !important;
   margin-bottom: 0.59%;
-"
-onmouseover="this.style.backgroundColor='#a29bfed7'"
-onmouseout="this.style.backgroundColor='white'"
-class="customFields"
->
-<img [src]="iconMale" width="25px !important" height="25px !important" class="rounded float-start" style="position: relative !important; top: 28% !important; left: 3% !important; border-radius: 100px !important;">
-<h6 style="position: relative !important; font-size: 10px !important; left: 6% !important; top:40% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Hasindu Hesara</h6>
-<img [src]="iconMissed" width="15px !important" height="15px !important" class="rounded float-start" style="position: relative !important; top:6% !important; left: 25% !important; border-radius: 100px !important;">
-<h6 style="position: relative !important; font-size: 10px !important; left: 26% !important; top: 8% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Missed Call</h6>
-<h6 style="position: relative !important; font-size: 10px !important; left:56.12% !important; bottom:25% !important; text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.329) !important;">Today</h6>
-<h6 style="position: relative !important; font-size: 10px !important; left: 85% !important; bottom:56% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">02.08 PM</h6>
-<span  style="position: relative !important; font-size: 19px !important; left: 95% !important; bottom: 109% !important;">...</span> 
-</div>
- <!-- ========= Table row 1 End =========  -->
+" onmouseover="this.style.backgroundColor='#a29bfed7'" onmouseout="this.style.backgroundColor='white'"
+    class=" customFields">
+    <img [src]="iconFemale" width="25px !important" height="25px !important" class="rounded float-start"
+      style="position: relative !important; top: 28% !important; left: 3% !important; border-radius: 100px !important;">
+    <h6
+      style="position: relative !important; font-size: 10px !important; left: 6% !important; top:40% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Upeka Nirmani</h6>
+    <img [src]="iconOuted" width="15px !important" height="15px !important" class="rounded float-start"
+      style="position: relative !important; top:6% !important; left: 25% !important; border-radius: 100px !important;">
+    <h6
+      style="position: relative !important; font-size: 10px !important; left: 26% !important; top: 8% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      Outgoing Call</h6>
+    <h6
+      style="position: relative !important; font-size: 10px !important; left:56.12% !important; bottom:25% !important; text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.329) !important;">
+      09/12</h6>
+    <h6
+      style="position: relative !important; font-size: 10px !important; left: 85% !important; bottom:56% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">
+      02.08 PM</h6>
+    <span
+      style="position: relative !important; font-size: 19px !important; left: 95% !important; bottom: 109% !important;">...</span>
+  </div>
+  <!-- ========= Table row 2 End ========= -->
 
-     <!-- Table row 2 Start-->
-<div 
-style="
-  position: relative; 
-  width: 102.79% !important;
-  height: 13% !important;
-  right: 1.40%;
-  background-color: white; 
-  border-radius: 1px !important; 
-  box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.381) !important;
-  margin-bottom: 0.59%;
-"
-onmouseover="this.style.backgroundColor='#a29bfed7'"
-onmouseout="this.style.backgroundColor='white'"
-class=" customFields"
->
-<img [src]="iconFemale" width="25px !important" height="25px !important" class="rounded float-start" style="position: relative !important; top: 28% !important; left: 3% !important; border-radius: 100px !important;">
-<h6 style="position: relative !important; font-size: 10px !important; left: 6% !important; top:40% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Upeka Nirmani</h6>
-<img [src]="iconOuted" width="15px !important" height="15px !important" class="rounded float-start" style="position: relative !important; top:6% !important; left: 25% !important; border-radius: 100px !important;">
-<h6 style="position: relative !important; font-size: 10px !important; left: 26% !important; top: 8% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">Outgoing Call</h6>
-<h6 style="position: relative !important; font-size: 10px !important; left:56.12% !important; bottom:25% !important; text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.329) !important;">09/12</h6>
-<h6 style="position: relative !important; font-size: 10px !important; left: 85% !important; bottom:56% !important; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.329) !important;">02.08 PM</h6>
-<span  style="position: relative !important; font-size: 19px !important; left: 95% !important; bottom: 109% !important;">...</span> 
-</div> 
-<!-- ========= Table row 2 End ========= -->
 
-   
 
 </div>
-  <!-- The Table box end -->
+<!-- The Table box end -->

@@ -1,4 +1,37 @@
-
-.customFields.dark-mode{
+.customFields.dark-mode {
   background-color: RED;
+}
+
+.custome-container {
+  width: 90%;
+  height: 800%;
+  position: absolute !important;
+  top: 92px !important;
+  left: 5% !important;
+  background-color: whitesmoke !important;
+  border-radius: 1px !important;
+  box-shadow: 0.5px 1px 2px 1px rgba(73, 52, 212, 0.228) !important;
+  overflow: hidden;
+}
+
+.header {
+  background-color: white !important;
+  position: relative !important;
+  width: 102.7% !important;
+  height: 13% !important;
+  right: 1.4%;
+  border-radius: 1px !important;
+  box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.404) !important;
+  margin-bottom: 0.59% !important;
+}
+
+.cust-row {
+  position: relative;
+  width: 102.79% !important;
+  height: 13% !important;
+  right: 1.4%;
+  background-color: white;
+  border-radius: 1px !important;
+  box-shadow: 0 1px 3px 0 rgba(99, 110, 114, 0.381) !important;
+  margin-bottom: 0.59%;
 }
