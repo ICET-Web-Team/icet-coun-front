@@ -1,34 +1,53 @@
 .card-style {
-    max-width: 100rem;
-    background-color: rgb(255, 255, 255);
-    border: 10px solid rgb(247, 250, 247);
-    filter: drop-shadow(2px 2px 2px #222);
+  background-color: rgb(255, 255, 255);
+  border: 10px solid rgb(247, 250, 247);
+  filter: drop-shadow(2px 2px 2px #222);
 }
 
 .card-sizing {
-    max-width: 70%;
+  max-width: 70%;
 }
 
 .logo-style {
-    width: 70%;
+  width: 70%;
 }
 
 .subContent-style {
-    font-size: small;
+  font-size: small;
 }
 
 .input-style {
-    background-color: rgb(82, 171, 75);
+  background-color: rgb(82, 171, 75);
 }
 
 .input-icon-style {
-    color: aliceblue;
+  color: aliceblue;
 }
-.image-background{
-    background-color: rgb(241, 243, 246);
+.image-background {
+  background-color: rgb(241, 243, 246);
 }
-.login-image-style{
-    object-fit: fill; 
-    width: 100%; 
-    height: 100%;
+.login-image-style {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-success,
+.btn-outline-success {
+  width: 100%;
 }
