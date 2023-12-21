@@ -4,6 +4,7 @@ import { InquireRegComponent } from './components/c&m/inquire-reg/inquire-reg.co
 import { MCallHistoryComponent } from './components/manager/m-call-history/m-call-history.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CounsellorRegComponent } from './components/manager/counsellor-reg/counsellor-reg.component';
+import { DashboardComponent } from './components/counsellor/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {
@@ -23,5 +24,9 @@ export const routes: Routes = [
     {
         path : 'counsellor-reg',
         component : CounsellorRegComponent
+    },
+    {
+        path:'dash',
+        component:DashboardComponent
     }
 ];
