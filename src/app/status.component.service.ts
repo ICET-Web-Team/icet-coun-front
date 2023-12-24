@@ -1,22 +1,30 @@
 import { Injectable } from '@angular/core';
-import { LoginComponent } from './pages/login/login.component';
 import { ManagerDashComponent } from './pages/manager-dash/manager-dash.component';
 import { CounsellorDashComponent } from './pages/counsellor-dash/counsellor-dash.component';
-import { CounsellorRegComponent } from './components/manager/counsellor-reg/counsellor-reg.component';
+import { LoginComponent } from './pages/login/login.component';
 
-@Injectable({ providedIn: 'root' })
-export class PagesService {
+@Injectable({
+  providedIn: 'root',
+})
+export class StatusComponentService {
+  constructor() {}
+
+  isDarkModeEnable: boolean = false;
   getPages() {
     return [
-      {
-       component : LoginComponent
-      },
+      // {
+      //  component : LoginComponent
+      // },
       {
         component: ManagerDashComponent,
       },
       {
         component: CounsellorDashComponent,
-      }
+      },
     ];
+  }
+
+  updateIsDarkMode(value: boolean) {
+    this.isDarkModeEnable = value;
   }
 }

@@ -4,6 +4,9 @@ import { RouterOutlet } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { InquireRegComponent } from '../../components/c&m/inquire-reg/inquire-reg.component';
 import { Router } from '@angular/router';
+import { MCallHistoryComponent } from '../../components/manager/m-call-history/m-call-history.component';
+import { StatusComponentService } from '../../service/component/status.component.service';
+import { DarkModeService } from '../../service/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-manager-dash',
@@ -13,7 +16,11 @@ import { Router } from '@angular/router';
   styleUrl: './manager-dash.component.css',
 })
 export class ManagerDashComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private service: StatusComponentService,
+    private darkModeService: DarkModeService
+  ) {}
   navigateComponent(value: String) {
     switch (value) {
       case 'dashboard':
@@ -23,7 +30,7 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/inquire-registration']);
         break;
       case 'reports':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/reports']);
         break;
       case 'issues':
         this.router.navigate(['/inquire-registration']);
@@ -38,7 +45,7 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/inquire-registration']);
         break;
       case 'callhistory':
-        this.router.navigate(['/call-history']);
+        this.router.navigate(['/m-call-history']);
         break;
       case 'issues':
         this.router.navigate(['/inquire-registration']);
@@ -125,24 +132,26 @@ export class ManagerDashComponent implements OnInit {
     });
   }
 
-  private setupSwitchMode() {
-    const switchMode = document.getElementById(
-      'switch-mode'
-    ) as HTMLInputElement;
-    const inquireDarkMode = new InquireRegComponent();
-    const routerBody = document.getElementById('router-body');
+  setupSwitchMode() {
+    this.darkModeService.toggleDarkMode();
+    const switchMode  = document.getElementById('switch-mode') as HTMLInputElement;
+    if(switchMode.checked){
+      this.changeDarkMode(false);
+    }
+    else{
+      this.changeDarkMode(true);
+    }
+  }
 
-    switchMode.addEventListener('change', () => {
-      if (switchMode.checked) {
-        routerBody?.classList.add('dark-mode');
-        inquireDarkMode.changeDarkMood(true);
-        document.body.classList.add('dark');
-      } else {
-        routerBody?.classList.remove('dark-mode');
-        inquireDarkMode.changeDarkMood(false);
-        document.body.classList.remove('dark');
-      }
-    });
+  private changeDarkMode(value: boolean) {
+    const routerBody = document.getElementById('router-body');
+    if (value) {
+      routerBody?.classList.add('dark-mode');
+      document.body.classList.add('dark');
+    } else {
+      routerBody?.classList.remove('dark-mode');
+      document.body.classList.remove('dark');
+    }
   }
 
   showDashboard() {

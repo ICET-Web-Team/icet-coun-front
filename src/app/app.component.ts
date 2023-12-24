@@ -4,8 +4,8 @@ import { RouterOutlet } from '@angular/router';
 
 import { ChartAppComponent } from './components/manager/student_progress/chart-app/chart-app.component';
 import { ManagerDashComponent } from './pages/manager-dash/manager-dash.component';
-import { LoginComponent } from './pages/login/login.component';
-import { PagesService } from './pages.service';
+import { StatusComponentService } from './service/component/status.component.service';
+
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,6 @@ import { PagesService } from './pages.service';
     RouterOutlet,
     ChartAppComponent,
     ManagerDashComponent,
-    LoginComponent,
   ],
 })
 export class AppComponent {
@@ -25,7 +24,7 @@ export class AppComponent {
     throw new Error('Method not implemented.');
   }
   constructor() {
-    this.pageList = inject(PagesService).getPages();
+    this.pageList = inject(StatusComponentService).getPages();
     this.currentAdIndex = 0;
   }
   pageList: any;
@@ -35,7 +34,7 @@ export class AppComponent {
     return this.pageList[this.currentAdIndex];
   }
 
-  displayNextPage(pageNumber : number) {
-    this.currentAdIndex=pageNumber;
+  displayNextPage(pageNumber: number) {
+    this.currentAdIndex = pageNumber;
   }
 }
