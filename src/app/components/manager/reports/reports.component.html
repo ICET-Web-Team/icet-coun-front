@@ -1,0 +1,58 @@
+<div class="container-fluid p-5">
+  <!-- ======================= Cards ================== -->
+  <div class="cardBox mb-4">
+    <div class="report-card"  [class.dark-mode]="isDarkMode">
+      <div>
+        <div class="numbers"  [class.dark-mode]="isDarkMode">1,504</div>
+        <div class="cardName"  [class.dark-mode]="isDarkMode">Daily Views</div>
+      </div>
+
+      <div class="iconBx">
+        <!-- <ion-icon name="eye-outline"></ion-icon> -->
+      </div>
+    </div>
+
+    <div class="report-card"  [class.dark-mode]="isDarkMode">
+      <div>
+        <div class="numbers"  [class.dark-mode]="isDarkMode">80</div>
+        <div class="cardName"  [class.dark-mode]="isDarkMode">Sales</div>
+      </div>
+
+      <div class="iconBx">
+        <!-- <ion-icon name="cart-outline"></ion-icon> -->
+      </div>
+    </div>
+
+    <div class="report-card"  [class.dark-mode]="isDarkMode">
+      <div>
+        <div class="numbers"  [class.dark-mode]="isDarkMode">284</div>
+        <div class="cardName"  [class.dark-mode]="isDarkMode">Comments</div>
+      </div>
+
+      <div class="iconBx">
+        <!-- <ion-icon name="chatbubbles-outline"></ion-icon> -->
+      </div>
+    </div>
+
+    <div class="report-card"  [class.dark-mode]="isDarkMode">
+      <div>
+        <div class="numbers"  [class.dark-mode]="isDarkMode">$7,842</div>
+        <div class="cardName"  [class.dark-mode]="isDarkMode">Earning</div>
+      </div>
+
+      <div class="iconBx">
+        <!-- <ion-icon name="cash-outline"></ion-icon> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================ Add Charts JS ================= -->
+  <div class="chartsBx"  [class.dark-mode]="isDarkMode">
+    <div class="chart" [class.dark-mode]="isDarkMode">
+      <canvas id="chart-1"></canvas>
+    </div>
+    <div class="chart" [class.dark-mode]="isDarkMode">
+      <canvas id="chart-2"></canvas>
+    </div>
+  </div>
+</div>

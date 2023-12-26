@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DarkModeService } from '../../../service/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-m-call-history',
@@ -8,23 +10,17 @@ import { CommonModule } from '@angular/common';
   templateUrl: './m-call-history.component.html',
   styleUrl: './m-call-history.component.css',
 })
-export class MCallHistoryComponent implements OnInit {
-  ngOnInit() {}
-  changeDarkMode(check: boolean) {
-    console.log('method have called ....');
-    var customFields = document.querySelectorAll('.customFields');
+export class MCallHistoryComponent{
 
-    if (check) {
-      customFields.forEach(function (mode) {
-        mode.classList.add('dark-mode');
-        console.log('true');
-      });
-    } else {
-      customFields.forEach(function (mode) {
-        mode.classList.remove('dark-mode');
-        console.log('method have called false');
-      });
-    }
+  isDarkMode = false;
+  private subscription: Subscription;
+
+  constructor(private darkModeService: DarkModeService) {
+    this.subscription = this.darkModeService.isDarkMode$.subscribe(
+      (darkMode) => {
+        this.isDarkMode = darkMode;
+      }
+    );
   }
 
   iconMale = './assets/images/icon-male.png';

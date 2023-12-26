@@ -1,0 +1,163 @@
+/* ======================= Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .report-card {
+  position: relative;
+  background: var(--reportWhite);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.316);
+}
+
+.cardBox .report-card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--main-green);
+}
+
+.cardBox .report-card .cardName {
+  color: var(--reportBlack2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .report-card:hover {
+  background: var(--main-green);
+}
+
+.cardBox .report-card:hover .numbers,
+.cardBox .report-card:hover .cardName {
+  color: var(--reportWhite);
+}
+
+/* ================== Charts JS ============== */
+.chartsBx {
+  border-radius: 20px;
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.316);
+}
+
+.chartsBx .chart {
+  position: relative;
+  background: white;
+  padding: 30px;
+  width: 100%;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  border: 2px solid var(--main-green);
+}
+
+/* =========================Dark Mode================================= */
+.cardBox .report-card.dark-mode {
+  background-color: var(--cardblack);
+  box-shadow: 0 2px 5px rgb(255, 255, 255);
+}
+
+.cardBox .report-card .numbers.dark-mode {
+  color: var(--white);
+}
+.cardBox .report-card .cardName.dark-mode {
+  color: var(--white);
+}
+
+.cardBox .report-card:hover .numbers.dark-mode,
+.cardBox .report-card:hover .cardName.dark-mode {
+  color: whitesmoke;
+}
+
+.cardBox .report-card:hover {
+  background: var(--main-green);
+}
+
+.chartsBx.dark-mode {
+  box-shadow: 0 2px 5px rgb(255, 255, 255);
+  background-color: var(--cardblack);
+}
+.chartsBx .chart.dark-mode {
+  background: var(--black1);
+  border: 2px solid var(--darkback);
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .chartsBx {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}

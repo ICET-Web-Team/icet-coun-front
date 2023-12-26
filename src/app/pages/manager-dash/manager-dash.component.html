@@ -49,10 +49,10 @@
         <span class="text">Call History</span>
       </a>
     </li>
-    <li (click)="navigateComponent('issues')" class="mouse-point">
+    <li (click)="navigateComponent('counsellor-reg')" class="mouse-point">
       <a>
         <i class="bx bxs-group"></i>
-        <span class="text">issues</span>
+        <span class="text">Counsellor Registation</span>
       </a>
     </li>
   </ul>
@@ -84,13 +84,13 @@
         <button type="submit" class="search-btn" style="display: none"></button>
       </div>
     </form>
-    <input type="checkbox" id="switch-mode" hidden />
+    <input type="checkbox" id="switch-mode" (change)="setupSwitchMode()"/>
     <label for="switch-mode" class="switch-mode"></label>
   </nav>
   <!-- NAVBAR -->
 
   <!-- MAIN -->
-  <div id="router-body">
+  <div id="router-body" style="min-height: 100vh;">
     <router-outlet></router-outlet>
   </div>
   <!-- MAIN -->

@@ -1,5 +1,5 @@
 <!-- -------------------------------------- -->
-<div class="container body">
+<div class="container body" [class.dark-mode]="isDarkMode">
   <div class="row ms-2">
     <div class="mt-4">
       <h3>Inquire Registration Form</h3>
@@ -31,10 +31,12 @@
       </div>
     </div>
   </div>
-  <div class="row mt-4 box-part mx-2">
+  <div class="row mt-4 box-part mx-2" [class.dark-mode]="isDarkMode">
     <div class="row pt-4 pb-3">
       <div class="col-4 mt-1 px-4">
-        <label for="about" class="lable">How do You know about us*</label>
+        <label for="about" class="lable" [class.dark-mode]="isDarkMode"
+          >How do You know about us*</label
+        >
         <select class="form-select form-select-md mb-3 field" id="about">
           <option selected value="facebook">Facebook</option>
           <option value="instagram">Instagram</option>
@@ -43,7 +45,9 @@
         </select>
       </div>
       <div class="col-4 mt-1 px-4">
-        <label for="interest" class="lable">Program of interest*</label>
+        <label for="interest" class="lable" [class.dark-mode]="isDarkMode"
+          >Program of interest*</label
+        >
         <select class="form-select form-select-md mb-3 field" id="interest">
           <option selected value="icm">iCM</option>
           <option value="icd">iCD</option>
@@ -51,32 +55,42 @@
         </select>
       </div>
       <div class="col-4 mt-1 px-4">
-        <label for="age" class="lable">Age*</label>
+        <label for="age" class="lable" [class.dark-mode]="isDarkMode"
+          >Age*</label
+        >
         <input class="form-control field" type="number" id="age" />
       </div>
     </div>
     <div class="row pb-4">
       <div class="col-4 mt-1 px-4">
-        <label for="gender" class="lable">Gender*</label>
+        <label for="gender" class="lable" [class.dark-mode]="isDarkMode"
+          >Gender*</label
+        >
         <select class="form-select form-select-md mb-3 field" id="gender">
           <option selected value="male">Male</option>
           <option value="female">Female</option>
         </select>
       </div>
       <div class="col-4 mt-1 px-4 px-4">
-        <label for="dob" class="lable">Date of birth</label>
+        <label for="dob" class="lable" [class.dark-mode]="isDarkMode"
+          >Date of birth</label
+        >
         <input type="date" name="" id="dob" class="form-control field" />
       </div>
       <div class="col-4 mt-1 px-4">
-        <label for="nic" class="lable">NIC</label>
+        <label for="nic" class="lable" [class.dark-mode]="isDarkMode"
+          >NIC</label
+        >
         <input type="number" id="nic" class="form-control field px-4" />
       </div>
     </div>
   </div>
-  <div class="row mt-5 box-part mx-2">
+  <div class="row mt-5 box-part mx-2" [class.dark-mode]="isDarkMode">
     <div class="row my-4">
       <div class="col-4 mt-1 px-4">
-        <label for="contact" class="lable">Contact number</label>
+        <label for="contact" class="lable" [class.dark-mode]="isDarkMode"
+          >Contact number</label
+        >
         <input
           #validContact
           (keyup)="phoneNumberValidation(validContact)"
@@ -103,7 +117,9 @@
         </button>
       </div>
       <div class="col-4 mt-1 px-4">
-        <label for="whatsapp" class="lable">WhatsApp number</label>
+        <label for="whatsapp" class="lable" [class.dark-mode]="isDarkMode"
+          >WhatsApp number</label
+        >
         <input
           type="number"
           id="whatsapp"
@@ -124,10 +140,12 @@
     />
     <label for="floatingInput" class="floatLable">Remarks :</label>
   </div>
-  <div class="row mt-5 box-part mx-2">
+  <div class="row mt-5 box-part mx-2" [class.dark-mode]="isDarkMode">
     <div class="row pt-4 pb-3">
       <div class="col-4 px-4">
-        <label for="" class="lable">Education Level</label>
+        <label for="" class="lable" [class.dark-mode]="isDarkMode"
+          >Education Level</label
+        >
         <select class="form-select form-select-md mb-3 field">
           <option selected>null</option>
           <option value="1">School Basic</option>
@@ -144,7 +162,9 @@
         </select>
       </div>
       <div class="col-4 px-4">
-        <label for="" class="lable">Employment Status</label>
+        <label for="" class="lable" [class.dark-mode]="isDarkMode"
+          >Employment Status</label
+        >
         <select class="form-select form-select-md mb-3 field">
           <option selected>null</option>
           <option value="1">Not Employed</option>
@@ -152,7 +172,7 @@
         </select>
       </div>
       <div class="col-4 px-4">
-        <label for="" class="lable">SQL</label>
+        <label for="" class="lable" [class.dark-mode]="isDarkMode">SQL</label>
         <select class="form-select form-select-md mb-3 field">
           <option selected>null</option>
           <option value="1">Yes</option>
@@ -162,11 +182,15 @@
     </div>
     <div class="row pb-4">
       <div class="col-4 px-4">
-        <label for="" class="lable">No. of calls made</label>
+        <label for="" class="lable" [class.dark-mode]="isDarkMode"
+          >No. of calls made</label
+        >
         <input type="number" class="form-control field" />
       </div>
       <div class="col-4 px-4">
-        <label for="" class="lable">Lead Stage</label>
+        <label for="" class="lable" [class.dark-mode]="isDarkMode"
+          >Lead Stage</label
+        >
         <select class="form-select field">
           <option selected>25% (Information Sent)</option>
           <option value="1">50% (First Call)</option>
@@ -175,17 +199,21 @@
         </select>
       </div>
       <div class="col-4 px-4">
-        <label for="date" class="lable">Payment Expected Date</label>
+        <label for="date" class="lable" [class.dark-mode]="isDarkMode"
+          >Payment Expected Date</label
+        >
         <div class="input-group">
           <input type="date" class="form-control field" />
         </div>
       </div>
     </div>
   </div>
-  <div class="row mt-5 box-part mx-2">
+  <div class="row mt-5 box-part mx-2" [class.dark-mode]="isDarkMode">
     <div class="row py-4">
       <div class="col-4 px-4">
-        <label for="isVistation" class="lable">Visitation</label>
+        <label for="isVistation" class="lable" [class.dark-mode]="isDarkMode"
+          >Visitation</label
+        >
         <select
           #visitationSelect
           (change)="isVisitation(visitationSelect)"
@@ -197,7 +225,9 @@
         </select>
       </div>
       <div class="col-4 px-4">
-        <label for="visitationDate" class="lable">Date</label>
+        <label for="visitationDate" class="lable" [class.dark-mode]="isDarkMode"
+          >Date</label
+        >
         <input
           type="date"
           id="visitationDate"
@@ -206,7 +236,9 @@
         />
       </div>
       <div class="col-4 px-4">
-        <label for="visitationTime" class="lable">Time</label>
+        <label for="visitationTime" class="lable" [class.dark-mode]="isDarkMode"
+          >Time</label
+        >
         <input
           type="time"
           id="visitationTime"
@@ -216,10 +248,15 @@
       </div>
     </div>
   </div>
-  <div class="row mt-5 box-part mx-2">
+  <div class="row mt-5 box-part mx-2" [class.dark-mode]="isDarkMode">
     <div class="row pt-4 pb-3">
       <div class="col-4 px-4">
-        <label for="isIqTestRequired" class="lable">IQ Test Required</label>
+        <label
+          for="isIqTestRequired"
+          class="lable"
+          [class.dark-mode]="isDarkMode"
+          >IQ Test Required</label
+        >
         <select
           #iqTestSelect
           (change)="isIqTestRequired(iqTestSelect)"
@@ -231,7 +268,9 @@
         </select>
       </div>
       <div class="col-4 px-4">
-        <label for="visitationDate" class="lable">Date</label>
+        <label for="visitationDate" class="lable" [class.dark-mode]="isDarkMode"
+          >Date</label
+        >
         <input
           type="date"
           id="iqTestDate"
@@ -240,7 +279,9 @@
         />
       </div>
       <div class="col-4 px-4">
-        <label for="visitationTime" class="lable">Time</label>
+        <label for="visitationTime" class="lable" [class.dark-mode]="isDarkMode"
+          >Time</label
+        >
         <input
           type="time"
           id="iqTestTime"
@@ -252,14 +293,18 @@
     <div class="row pb-4">
       <div class="col-4 px-4"></div>
       <div class="col-4 px-4">
-        <label for="iqModel" class="lable">Model</label>
+        <label for="iqModel" class="lable" [class.dark-mode]="isDarkMode"
+          >Model</label
+        >
         <select id="iqModel" class="form-select field" disabled>
           <option selected>Physical</option>
           <option value="1">Online</option>
         </select>
       </div>
       <div class="col-4 px-4">
-        <label for="iqMedium" class="lable">Medium</label>
+        <label for="iqMedium" class="lable" [class.dark-mode]="isDarkMode"
+          >Medium</label
+        >
         <select id="iqMedium" class="form-select field" disabled>
           <option selected>Sinhala</option>
           <option value="1">English</option>
@@ -297,7 +342,11 @@
   </div>
   <div class="row mt-5 me-4 pb-4">
     <div class="col-10"></div>
-    <button type="button" class="btn btn-danger rounded-5 col-2" style="font-size: large; font-weight: 600;">
+    <button
+      type="button"
+      class="btn btn-danger rounded-5 col-2"
+      style="font-size: large; font-weight: 600"
+    >
       Register <i class="bx bx-right-arrow-alt"></i>
     </button>
   </div>

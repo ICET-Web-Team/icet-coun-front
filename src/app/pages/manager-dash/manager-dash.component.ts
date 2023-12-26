@@ -5,6 +5,8 @@ import { OnInit } from '@angular/core';
 import { InquireRegComponent } from '../../components/c&m/inquire-reg/inquire-reg.component';
 import { Router } from '@angular/router';
 import { MCallHistoryComponent } from '../../components/manager/m-call-history/m-call-history.component';
+import { StatusComponentService } from '../../service/component/status.component.service';
+import { DarkModeService } from '../../service/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-manager-dash',
@@ -14,7 +16,10 @@ import { MCallHistoryComponent } from '../../components/manager/m-call-history/m
   styleUrl: './manager-dash.component.css',
 })
 export class ManagerDashComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private darkModeService: DarkModeService
+  ) {}
   navigateComponent(value: String) {
     switch (value) {
       case 'dashboard':
@@ -24,25 +29,26 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/inquire-registration']);
         break;
       case 'reports':
-        this.router.navigate(['/inquire-registration']);
+        console.log('reports');
+        this.router.navigate(['/reports']);
         break;
       case 'issues':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/inquiry-list']);
         break;
       case 'viewtask':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/']);
+        break;
+      case 'counsellor-reg':
+        this.router.navigate(['/counsellor-reg']);
         break;
       case 'settings':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/']);
         break;
       case 'logout':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/']);
         break;
       case 'callhistory':
-        this.router.navigate(['/call-history']);
-        break;
-      case 'issues':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/m-call-history']);
         break;
       default:
         console.log('Not definde URL');
@@ -60,7 +66,7 @@ export class ManagerDashComponent implements OnInit {
     this.setupToggleSidebar();
     this.setupSearchButton();
     this.setupWindowResize();
-    this.setupSwitchMode();
+    // this.setupSwitchMode();
   }
 
   private setupSideMenuClickEvent() {
@@ -126,27 +132,27 @@ export class ManagerDashComponent implements OnInit {
     });
   }
 
-  private setupSwitchMode() {
+  setupSwitchMode() {
+    this.darkModeService.toggleDarkMode();
     const switchMode = document.getElementById(
       'switch-mode'
     ) as HTMLInputElement;
-    const inquireDarkMode = new InquireRegComponent();
-    const mCHistoryTableDarkMode=new MCallHistoryComponent();
-    const routerBody = document.getElementById('router-body');
+    if (switchMode.checked) {
+      this.changeDarkMode(true);
+    } else {
+      this.changeDarkMode(false);
+    }
+  }
 
-    switchMode.addEventListener('change', () => {
-      if (switchMode.checked) {
-        routerBody?.classList.add('dark-mode');
-        inquireDarkMode.changeDarkMood(true);
-        mCHistoryTableDarkMode.changeDarkMode(true);
-        document.body.classList.add('dark');
-      } else {
-        routerBody?.classList.remove('dark-mode');
-        inquireDarkMode.changeDarkMood(false);
-        mCHistoryTableDarkMode.changeDarkMode(false);
-        document.body.classList.remove('dark');
-      }
-    });
+  private changeDarkMode(value: boolean) {
+    const routerBody = document.getElementById('router-body');
+    if (value) {
+      routerBody?.classList.add('dark-mode');
+      document.body.classList.add('dark');
+    } else {
+      routerBody?.classList.remove('dark-mode');
+      document.body.classList.remove('dark');
+    }
   }
 
   showDashboard() {
