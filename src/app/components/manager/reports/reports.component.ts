@@ -36,15 +36,16 @@ export class ReportsComponent implements OnInit {
     new Chart(this.chartA, {
       type: 'polarArea',
       data: {
-        labels: ['fsdf', 'gfdsf', 'fdsf'],
+        labels: ['Facebook', 'Instagram', 'Youtube', 'Friend'],
         datasets: [
           {
             label: '# of Votes',
-            data: [60, 500, 800],
+            data: [100, 50, 150, 70],
             backgroundColor: [
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(255, 206, 86, 1)',
+              'rgba(97,165,112)',
+              'rgba(159,103,204)',
+              'rgba(105,198,205)',
+              'rgba(250,196,44)',
             ],
           },
         ],
@@ -56,15 +57,16 @@ export class ReportsComponent implements OnInit {
     new Chart(this.chartB, {
       type: 'bar',
       data: {
-        labels: ['fsdf', 'gfdsf', 'fdsf'],
+        labels: ['25%', '50%', '75%','100%'],
         datasets: [
           {
-            label: '# of Votes',
-            data: [60, 500, 800],
+            label: 'No of Student in Lead Stage',
+            data: [50, 120, 100,80],
             backgroundColor: [
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(255, 206, 86, 1)',
+              'rgba(250,117,110)',
+              'rgba(2,185,57)',
+              'rgba(184,159,0)',
+              'rgba(245,100,227)',
             ],
           },
         ],
@@ -72,6 +74,7 @@ export class ReportsComponent implements OnInit {
       options: {
         responsive: true,
       },
+
     });
   }
   enableDarkMode() {

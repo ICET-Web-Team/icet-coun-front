@@ -1,0 +1,45 @@
+.lable {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #767676;
+}
+
+.hr-line {
+  border-color: black;
+}
+
+.customField {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(211, 235, 205);
+  background-color: rgba(255, 255, 255, 0.307);
+  border-radius: 5px;
+  padding: 8px;
+  font-size: medium;
+}
+
+.customField:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 5px 16px 0 rgb(182, 242, 167), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-card {
+  background-color: #d3ebcd;
+}
+
+/* ==================dark-mode================ */
+.customField.dark-mode {
+  color: #fff;
+}
+
+.main-card.dark-mode {
+  background-color: var(--cardblack);
+}
+
+.lable.dark-mode {
+  color: white;
+}
+
+.hr-line.dark-mode {
+  border-color: white;
+}

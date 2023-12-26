@@ -13,7 +13,6 @@ import { StatusComponentService } from '../../../service/component/status.compon
   providers: [StatusComponentService],
 })
 export class InquireRegComponent implements OnInit {
-  service: any;
   isDarkMode = false;
   private subscription: Subscription;
 

@@ -3,8 +3,8 @@ import { ChartAppComponent } from './components/manager/student_progress/chart-a
 import { InquireRegComponent } from './components/c&m/inquire-reg/inquire-reg.component';
 import { MCallHistoryComponent } from './components/manager/m-call-history/m-call-history.component';
 import { CounsellorRegComponent } from './components/manager/counsellor-reg/counsellor-reg.component';
-import { CInquiryListComponent } from './components/counsellor/c-inquiry-list/c-inquiry-list.component';
 import { ReportsComponent } from './components/manager/reports/reports.component';
+import { MInquiryListComponent } from './components/manager/m-inquiry-list/m-inquiry-list.component';
 
 export const routes: Routes = [
   {
@@ -16,15 +16,19 @@ export const routes: Routes = [
     component: InquireRegComponent,
   },
   {
-    path: 'call-history',
+    path: 'm-call-history',
     component: MCallHistoryComponent,
   },
   {
     path: 'inquiry-list',
-    component: CInquiryListComponent,
+    component: MInquiryListComponent,
   },
   {
     path: 'counsellor-reg',
     component: CounsellorRegComponent,
+  },
+  {
+    path : 'reports',
+    component : ReportsComponent
   }
 ];

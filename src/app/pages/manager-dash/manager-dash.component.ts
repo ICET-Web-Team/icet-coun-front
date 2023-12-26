@@ -18,7 +18,6 @@ import { DarkModeService } from '../../service/dark-mode/dark-mode.service';
 export class ManagerDashComponent implements OnInit {
   constructor(
     private router: Router,
-    private service: StatusComponentService,
     private darkModeService: DarkModeService
   ) {}
   navigateComponent(value: String) {
@@ -30,25 +29,26 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/inquire-registration']);
         break;
       case 'reports':
+        console.log('reports');
         this.router.navigate(['/reports']);
         break;
       case 'issues':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/inquiry-list']);
         break;
       case 'viewtask':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/']);
+        break;
+      case 'counsellor-reg':
+        this.router.navigate(['/counsellor-reg']);
         break;
       case 'settings':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/']);
         break;
       case 'logout':
-        this.router.navigate(['/inquire-registration']);
+        this.router.navigate(['/']);
         break;
       case 'callhistory':
         this.router.navigate(['/m-call-history']);
-        break;
-      case 'issues':
-        this.router.navigate(['/inquire-registration']);
         break;
       default:
         console.log('Not definde URL');
@@ -66,7 +66,7 @@ export class ManagerDashComponent implements OnInit {
     this.setupToggleSidebar();
     this.setupSearchButton();
     this.setupWindowResize();
-    this.setupSwitchMode();
+    // this.setupSwitchMode();
   }
 
   private setupSideMenuClickEvent() {
@@ -134,12 +134,13 @@ export class ManagerDashComponent implements OnInit {
 
   setupSwitchMode() {
     this.darkModeService.toggleDarkMode();
-    const switchMode  = document.getElementById('switch-mode') as HTMLInputElement;
-    if(switchMode.checked){
-      this.changeDarkMode(false);
-    }
-    else{
+    const switchMode = document.getElementById(
+      'switch-mode'
+    ) as HTMLInputElement;
+    if (switchMode.checked) {
       this.changeDarkMode(true);
+    } else {
+      this.changeDarkMode(false);
     }
   }
 

@@ -4,27 +4,33 @@
   <div class="h2 col-11">Counselor Registration</div>
   <div class="col-1"></div>
   <div class="col-11">
-    <hr class="border-2 border-dark" />
-    <!-- This div will print a line -->
+    <hr class="border-2 hr-line" [class.dark-mode]="isDarkMode" />
   </div>
   <div style="height: 20px"></div>
-  <div class="mb-3 col-4">
-    <input
-      type="text"
-      class="form-control rounded-0 border-0 border-bottom"
-      placeholder="Counselor Full Name"
-    />
+  <div class="mb-3 col-5">
+    <div class="form-floating mb-3 m-auto">
+      <input
+        type="text"
+        class="form-control-plaintext customField"
+        id="floatingInput"
+        [class.dark-mode]="isDarkMode"
+      />
+      <label for="floatingInput" class="floatLable">Student Full Name :</label>
+    </div>
   </div>
   <div style="height: 30px"></div>
   <!-- Add this div for a 30px space -->
   <div
-    class="container rounded-4 shadow-lg"
+    class="container rounded-4 shadow-lg main-card"
     id="hef"
-    style="background-color: #d3ebcd"
+    [class.dark-mode]="isDarkMode"
   >
     <div class="row px-3">
       <div class="mb-3 col-sm-10 col-md-8 col-lg-6 pt-4 px-4">
-        <label for="exampleFormControlInput1" class="form-label"
+        <label
+          for="exampleFormControlInput1"
+          class="form-label lable"
+          [class.dark-mode]="isDarkMode"
           >Email address</label
         >
         <input
@@ -44,11 +50,14 @@
     <div class="position-relative pt-sm-5 pt-md-0" style="top: -4rem">
       <div class="row px-3">
         <div class="mb-3 col-sm-7 col-md-4 col-lg-3 pt-4 px-4">
-          <label for="exampleFormControlInput1" class="form-label"
+          <label
+            for="exampleFormControlInput1"
+            class="form-label lable"
+            [class.dark-mode]="isDarkMode"
             >Contact number</label
           >
           <input
-            type="tel"
+            type="number"
             class="form-control rounded-5"
             id="exampleFormControlInput1"
             placeholder="  07X XXX XXXX"
@@ -56,11 +65,14 @@
         </div>
         <div class="col-sm-7 col-md-5 col-lg-4">
           <div class="mb-3 pt-4 px-sm-3 px-md-5">
-            <label for="exampleFormControlInput1" class="form-label"
+            <label
+              for="exampleFormControlInput1"
+              class="form-label lable"
+              [class.dark-mode]="isDarkMode"
               >NIC No.</label
             >
             <input
-              type="text"
+              type="number"
               class="form-control rounded-5"
               placeholder="XXXXXXXXXV"
             />
@@ -69,12 +81,16 @@
       </div>
       <div class="row px-3">
         <div class="mb-3 col-sm-7 col-md-4 col-lg-3 pt-4 px-4">
-          <label class="form-label">Date Of Birth</label>
+          <label class="form-label lable" [class.dark-mode]="isDarkMode"
+            >Date Of Birth</label
+          >
           <input type="date" class="form-control rounded-5" />
         </div>
         <div class="col-sm-7 col-md-5 col-lg-4">
           <div class="mb-3 pt-4 px-sm-3 px-md-5">
-            <label class="form-label">Gender</label>
+            <label class="form- lable" [class.dark-mode]="isDarkMode"
+              >Gender</label
+            >
             <select
               class="form-select rounded-5"
               aria-label="Default select example"
