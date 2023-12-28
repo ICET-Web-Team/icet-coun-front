@@ -15,7 +15,9 @@
         id="floatingInput"
         [class.dark-mode]="isDarkMode"
       />
-      <label for="floatingInput" class="floatLable">Student Full Name :</label>
+      <label for="floatingInput" class="floatLable"
+        >Counselor Full Name :</label
+      >
     </div>
   </div>
   <div style="height: 30px"></div>
@@ -104,11 +106,65 @@
       </div>
     </div>
   </div>
+
+  <div style="height: 30px"></div>
+
+  <div
+    class="container rounded-4 shadow-lg main-card"
+    id="hef"
+    [class.dark-mode]="isDarkMode"
+  >
+    <div class="mb-3 col-sm-10 col-md-8 col-lg-6 pt-4 px-4">
+      <label
+        for="exampleFormControlInput1"
+        class="form-label lable"
+        [class.dark-mode]="isDarkMode"
+        >User Name</label
+      >
+      <input
+        type="text"
+        class="form-control rounded-5"
+        placeholder="Enter User Name"
+      />
+    </div>
+    <div class="row px-3">
+      <div class="mb-3 col-sm-7 col-md-4 col-lg-3 pt-4 px-4">
+        <label
+          for="exampleFormControlInput1"
+          class="form-label lable"
+          [class.dark-mode]="isDarkMode"
+          >New password</label
+        >
+        <input
+          type="password"
+          class="form-control rounded-5"
+          id="password_input"
+
+        />
+      </div>
+      <div class="col-sm-7 col-md-5 col-lg-4">
+        <div class="mb-3 pt-4 px-sm-3 px-md-5">
+          <label
+            for="exampleFormControlInput1"
+            class="form-label lable"
+            [class.dark-mode]="isDarkMode"
+            >Confirm password</label
+          >
+          <input
+            type="password"
+            class="form-control rounded-5"
+            id="password_confirm"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row pt-5">
     <div class="col-lg-9 col-md-9 col-sm-8 col-xl-10"></div>
     <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2">
       <button
         type="button"
+        id="btn_register"
         class="btn btn-danger rounded-5 mx-lg-3 mx-md-0 mx-sm-0 px-3 py-2 position-relative"
       >
         Register <i class="bx bx-right-arrow-alt"></i>
