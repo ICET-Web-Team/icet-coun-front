@@ -282,6 +282,10 @@ body {
   color: var(--dark);
 }
 
+.mouse-point{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   #sidebar {
     width: 200px;

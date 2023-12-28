@@ -1,18 +1,60 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { InquireRegComponent } from '../../components/c&m/inquire-reg/inquire-reg.component';
+import { Router } from '@angular/router';
+import { MCallHistoryComponent } from '../../components/manager/m-call-history/m-call-history.component';
+import { StatusComponentService } from '../../service/component/status.component.service';
+import { DarkModeService } from '../../service/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-manager-dash',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './manager-dash.component.html',
-  styleUrl: './manager-dash.component.css'
+  styleUrl: './manager-dash.component.css',
 })
 export class ManagerDashComponent implements OnInit {
-  
+  constructor(
+    private router: Router,
+    private darkModeService: DarkModeService
+  ) {}
+  navigateComponent(value: String) {
+    switch (value) {
+      case 'dashboard':
+        this.router.navigate(['/chart']);
+        break;
+      case 'inquiries':
+        this.router.navigate(['/inquire-registration']);
+        break;
+      case 'reports':
+        console.log('reports');
+        this.router.navigate(['/reports']);
+        break;
+      case 'issues':
+        this.router.navigate(['/inquiry-list']);
+        break;
+      case 'viewtask':
+        this.router.navigate(['/']);
+        break;
+      case 'counsellor-reg':
+        this.router.navigate(['/counsellor-reg']);
+        break;
+      case 'settings':
+        this.router.navigate(['/']);
+        break;
+      case 'logout':
+        this.router.navigate(['/']);
+        break;
+      case 'callhistory':
+        this.router.navigate(['/m-call-history']);
+        break;
+      default:
+        console.log('Not definde URL');
+    }
+  }
+
   imageUrl: string = 'assets/images/girl.png';
 
   isSidebarHidden = false;
@@ -24,16 +66,18 @@ export class ManagerDashComponent implements OnInit {
     this.setupToggleSidebar();
     this.setupSearchButton();
     this.setupWindowResize();
-    this.setupSwitchMode();
+    // this.setupSwitchMode();
   }
 
   private setupSideMenuClickEvent() {
-    const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-    allSideMenu.forEach(item => {
+    const allSideMenu = document.querySelectorAll(
+      '#sidebar .side-menu.top li a'
+    );
+    allSideMenu.forEach((item) => {
       const li = (item as HTMLElement).parentElement;
 
       item.addEventListener('click', () => {
-        allSideMenu.forEach(i => {
+        allSideMenu.forEach((i) => {
           (i as HTMLElement).parentElement?.classList.remove('active');
         });
         li?.classList.add('active');
@@ -42,7 +86,9 @@ export class ManagerDashComponent implements OnInit {
   }
 
   private setupToggleSidebar() {
-    const menuBar = document.querySelector('#content nav .bx.bx-menu') as HTMLElement;
+    const menuBar = document.querySelector(
+      '#content nav .bx.bx-menu'
+    ) as HTMLElement;
     const sidebar = document.getElementById('sidebar');
 
     menuBar.addEventListener('click', () => {
@@ -51,8 +97,12 @@ export class ManagerDashComponent implements OnInit {
   }
 
   private setupSearchButton() {
-    const searchButton = document.querySelector('#content nav form .form-input button') as HTMLElement;
-    const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx') as HTMLElement;
+    const searchButton = document.querySelector(
+      '#content nav form .form-input button'
+    ) as HTMLElement;
+    const searchButtonIcon = document.querySelector(
+      '#content nav form .form-input button .bx'
+    ) as HTMLElement;
     const searchForm = document.querySelector('#content nav form');
 
     searchButton.addEventListener('click', (e) => {
@@ -82,22 +132,27 @@ export class ManagerDashComponent implements OnInit {
     });
   }
 
-  private setupSwitchMode() {
-    const switchMode = document.getElementById('switch-mode') as HTMLInputElement;
-    const inquireDarkMode= new InquireRegComponent();
-    const routerBody = document.getElementById('router-body');
+  setupSwitchMode() {
+    this.darkModeService.toggleDarkMode();
+    const switchMode = document.getElementById(
+      'switch-mode'
+    ) as HTMLInputElement;
+    if (switchMode.checked) {
+      this.changeDarkMode(true);
+    } else {
+      this.changeDarkMode(false);
+    }
+  }
 
-    switchMode.addEventListener('change', () => {
-      if (switchMode.checked) {
-        routerBody?.classList.add('dark-mode');
-        inquireDarkMode.changeDarkMood(true);
-        document.body.classList.add('dark');
-      } else {
-        routerBody?.classList.remove('dark-mode');
-        inquireDarkMode.changeDarkMood(false);
-        document.body.classList.remove('dark');
-      }
-    });
+  private changeDarkMode(value: boolean) {
+    const routerBody = document.getElementById('router-body');
+    if (value) {
+      routerBody?.classList.add('dark-mode');
+      document.body.classList.add('dark');
+    } else {
+      routerBody?.classList.remove('dark-mode');
+      document.body.classList.remove('dark');
+    }
   }
 
   showDashboard() {

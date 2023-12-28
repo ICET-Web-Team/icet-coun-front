@@ -1,20 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DarkModeService } from '../../../service/dark-mode/dark-mode.service';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { StatusComponentService } from '../../../service/component/status.component.service';
 
 @Component({
   selector: 'app-inquire-reg',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './inquire-reg.component.html',
-  styleUrl: './inquire-reg.component.css',
+  styleUrls: ['./inquire-reg.component.css'],
+  providers: [StatusComponentService],
 })
 export class InquireRegComponent implements OnInit {
+  isDarkMode = false;
+  private subscription: Subscription;
+
+  constructor(private darkModeService: DarkModeService) {
+    this.subscription = this.darkModeService.isDarkMode$.subscribe(
+      (darkMode) => {
+        this.isDarkMode = darkMode;
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   ngOnInit(): void {
     const dateNowElement: HTMLElement | null =
       document.getElementById('dateNow');
     if (dateNowElement) {
       const currentDate: string = this.getCurrentDate();
       dateNowElement.innerHTML = currentDate;
+    }
+    const service = new StatusComponentService();
+    var value = service.isDarkModeEnable;
+    console.log('inquire----------' + value);
+    if (value) {
+      this.changeDarkMood(true);
     }
   }
 
