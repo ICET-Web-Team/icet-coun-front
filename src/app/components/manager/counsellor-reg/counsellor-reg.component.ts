@@ -23,7 +23,33 @@ export class CounsellorRegComponent {
     );
   }
 
+  
+
+  ngOnInit(): void {
+    const passwordConfirm = document.getElementById('password_confirm') as HTMLInputElement;
+    passwordConfirm.addEventListener('change', this.checkPasswordEquality.bind(this));
+  }
+
+  
+
+  // Function to run when password_confirm element is changed
+  checkPasswordEquality(): void {
+    const passwordInput = document.getElementById('password_input') as HTMLInputElement;
+    const passwordConfirm = document.getElementById('password_confirm') as HTMLInputElement;
+    const registerButton = document.getElementById('btn_register') as HTMLButtonElement;
+
+    if (passwordInput.value !== passwordConfirm.value) {
+      registerButton.disabled = true;
+      passwordConfirm.style.borderColor = 'red'; // Set border color to red
+      
+    } else {
+      registerButton.disabled = false;
+      passwordConfirm.style.borderColor = ''; // Reset border color
+    }
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
 }

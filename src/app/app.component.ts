@@ -5,6 +5,8 @@ import { RouterOutlet } from '@angular/router';
 import { ChartAppComponent } from './components/manager/student_progress/chart-app/chart-app.component';
 import { ManagerDashComponent } from './pages/manager-dash/manager-dash.component';
 import { StatusComponentService } from './service/component/status.component.service';
+import { MTaskListComponent } from "./components/manager/m-task-list/m-task-list.component";
+import { CTaskListComponent } from "./components/counsellor/c-task-list/c-task-list.component";
 
 
 @Component({

@@ -5,6 +5,7 @@ import { MCallHistoryComponent } from './components/manager/m-call-history/m-cal
 import { CounsellorRegComponent } from './components/manager/counsellor-reg/counsellor-reg.component';
 import { ReportsComponent } from './components/manager/reports/reports.component';
 import { MInquiryListComponent } from './components/manager/m-inquiry-list/m-inquiry-list.component';
+import { MTaskListComponent } from './components/manager/m-task-list/m-task-list.component';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path : 'reports',
     component : ReportsComponent
+  },
+  {
+    path : 'm-task',
+    component : MTaskListComponent
   }
 ];

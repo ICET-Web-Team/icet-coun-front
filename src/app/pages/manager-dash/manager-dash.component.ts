@@ -70,7 +70,7 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/inquiry-list']);
         break;
       case 'viewtask':
-        this.router.navigate(['/']);
+        this.router.navigate(['/m-task']);
         break;
       case 'counsellor-reg':
         this.router.navigate(['/counsellor-reg']);
