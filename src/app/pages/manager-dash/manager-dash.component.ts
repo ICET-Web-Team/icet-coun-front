@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { MCallHistoryComponent } from '../../components/manager/m-call-history/m-call-history.component';
 import { StatusComponentService } from '../../service/component/status.component.service';
 import { DarkModeService } from '../../service/dark-mode/dark-mode.service';
+import Swal from 'sweetalert2';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-manager-dash',
@@ -15,12 +17,44 @@ import { DarkModeService } from '../../service/dark-mode/dark-mode.service';
   templateUrl: './manager-dash.component.html',
   styleUrl: './manager-dash.component.css',
 })
+
 export class ManagerDashComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private darkModeService: DarkModeService
-  ) {}
-  navigateComponent(value: String) {
+
+  isDarkMode = false;
+  private subscription: Subscription;
+
+  constructor(private darkModeService: DarkModeService, private router: Router) {
+    this.subscription = this.darkModeService.isDarkMode$.subscribe(
+      (darkMode) => {
+        this.isDarkMode = darkMode;
+      }
+    );
+  }
+
+  openCallDialog() {
+    Swal.fire({
+      title: 'Call Details',
+      html:
+        '<input id="name" class="swal2-input" placeholder="Name">' +
+        '<input id="number" class="swal2-input" placeholder="Number">' +
+        '<select id="callType" class="swal2-select">' +
+        '<option value="incoming">Incoming</option>' +
+        '<option value="outgoing">Outgoing</option>' +
+        '</select>',
+      focusConfirm: false,
+      preConfirm: () => {
+        const name = (document.getElementById('name') as HTMLInputElement).value;
+        const number = (document.getElementById('number') as HTMLInputElement).value;
+        const callType = (document.getElementById('callType') as HTMLSelectElement).value;
+        // Process the values as needed
+        console.log('Name:', name);
+        console.log('Number:', number);
+        console.log('Call Type:', callType);
+      },
+    });
+  }
+
+  navigateComponent(value: string) {
     switch (value) {
       case 'dashboard':
         this.router.navigate(['/chart']);
@@ -42,8 +76,6 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/counsellor-reg']);
         break;
       case 'settings':
-        this.router.navigate(['/']);
-        break;
       case 'logout':
         this.router.navigate(['/']);
         break;
@@ -51,11 +83,11 @@ export class ManagerDashComponent implements OnInit {
         this.router.navigate(['/m-call-history']);
         break;
       default:
-        console.log('Not definde URL');
+        console.log('Not defined URL');
     }
   }
 
-  imageUrl: string = 'assets/images/girl.png';
+  imageUrl = 'assets/images/girl.png';
 
   isSidebarHidden = false;
   isDashboardSectionVisible = true;
@@ -70,9 +102,7 @@ export class ManagerDashComponent implements OnInit {
   }
 
   private setupSideMenuClickEvent() {
-    const allSideMenu = document.querySelectorAll(
-      '#sidebar .side-menu.top li a'
-    );
+    const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
     allSideMenu.forEach((item) => {
       const li = (item as HTMLElement).parentElement;
 
@@ -86,9 +116,7 @@ export class ManagerDashComponent implements OnInit {
   }
 
   private setupToggleSidebar() {
-    const menuBar = document.querySelector(
-      '#content nav .bx.bx-menu'
-    ) as HTMLElement;
+    const menuBar = document.querySelector('#content nav .bx.bx-menu') as HTMLElement;
     const sidebar = document.getElementById('sidebar');
 
     menuBar.addEventListener('click', () => {
@@ -97,12 +125,8 @@ export class ManagerDashComponent implements OnInit {
   }
 
   private setupSearchButton() {
-    const searchButton = document.querySelector(
-      '#content nav form .form-input button'
-    ) as HTMLElement;
-    const searchButtonIcon = document.querySelector(
-      '#content nav form .form-input button .bx'
-    ) as HTMLElement;
+    const searchButton = document.querySelector('#content nav form .form-input button') as HTMLElement;
+    const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx') as HTMLElement;
     const searchForm = document.querySelector('#content nav form');
 
     searchButton.addEventListener('click', (e) => {
@@ -134,9 +158,7 @@ export class ManagerDashComponent implements OnInit {
 
   setupSwitchMode() {
     this.darkModeService.toggleDarkMode();
-    const switchMode = document.getElementById(
-      'switch-mode'
-    ) as HTMLInputElement;
+    const switchMode = document.getElementById('switch-mode') as HTMLInputElement;
     if (switchMode.checked) {
       this.changeDarkMode(true);
     } else {

@@ -15,7 +15,6 @@ import { StatusComponentService } from './service/component/status.component.ser
   imports: [
     CommonModule,
     RouterOutlet,
-    ChartAppComponent,
     ManagerDashComponent,
   ],
 })

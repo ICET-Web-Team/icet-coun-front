@@ -345,3 +345,81 @@ body {
     min-width: 420px;
   }
 }
+
+
+/*==========Dark Mode==========*/
+/* .navigation.dark-mode {
+  background-color: black;
+}
+
+
+
+ .dark-mode {
+
+  .main{
+   background-color: var(--darkback); 
+   color: #ffffff; 
+  }
+  
+  .navigation{
+   background-color: var(--black1); 
+   color: #fff;
+   border-left: 10px solid var(--black1);
+  }
+ 
+  .card{
+   background-color: var(--cardblack);   
+  }
+  
+  .recentOrders{
+   background-color:var(--cardblack);
+   color: #fff;
+  }
+ 
+  .numbers{
+   color: #fff;
+  }
+ 
+  .cardName{
+   color: #fff;
+  }
+ 
+  .navigation ul li:hover,
+ .navigation ul li.hovered {
+   background-color: var(--darkback);
+ }
+ 
+ .navigation ul li:hover a::before,
+ .navigation ul li.hovered a::before {
+   box-shadow: 35px 35px 0 10px var(--darkback);
+ }
+ 
+ .navigation ul li:hover a::after,
+ .navigation ul li.hovered a::after {
+   box-shadow: 35px -35px 0 10px var(--darkback);
+ }
+ 
+ .recentCustomers{
+   background-color:var(--cardblack);
+ }
+ 
+ td{
+   color: #fff;
+ }
+ 
+ .search label input {
+   background-color: var(--darkback);
+ }
+ 
+ .graph-tham{
+   background-color: var(--darkback);
+   box-shadow: 
+   inset 0 3px 4px rgba(0, 0, 0, 0.365);
+   
+ }
+ 
+ .selected {
+   background-color: var(--darkback);
+   /* Adjust the style as needed */
+
+  

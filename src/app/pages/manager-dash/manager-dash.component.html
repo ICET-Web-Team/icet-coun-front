@@ -4,13 +4,11 @@
 />
 
 <!-- SIDEBAR -->
-<section id="sidebar">
+<section id="sidebar" style="overflow-y: hidden;">
   <a href="#" class="brand">
     <span class="text">Haseetha</span>
   </a>
-  <a href="#" class="profile"> 
-    <img src="assets/images/girl.png" alt="Profile Pic" />
-  </a>
+  
 
   <ul class="side-menu top">
     <li (click)="navigateComponent('dashboard')" class="mouse-point">
@@ -78,6 +76,17 @@
   <!-- NAVBAR -->
   <nav>
     <i class="bx bx-menu"></i>
+
+    <!-- Add the call icon -->
+  <i class="bx bx-phone" (click)="openCallDialog()"></i>
+
+  <form action="#">
+    <div class="form-input">
+      <button type="submit" class="search-btn" style="display: none"></button>
+    </div>
+  </form>
+  <input type="checkbox" id="switch-mode" (change)="setupSwitchMode()" />
+  <label for="switch-mode" class="switch-mode"></label>
 
     <form action="#">
       <div class="form-input">
