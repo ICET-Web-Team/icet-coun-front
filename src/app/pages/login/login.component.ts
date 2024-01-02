@@ -38,12 +38,23 @@ export class LoginComponent implements OnInit {
       'password-field'
     ) as HTMLInputElement;
 
-    if(userNameElement.value === "sasa" && passwordElement.value === "123"){
-      this.appComponent.displayNextPage(1);
-    }
-    else{
-      console.log('incorrect password');
-    }
- 
+    fetch('http://localhost:3000/user/' + userNameElement.value)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let password = data.data[0].pasword;
+        if (passwordElement.value == password) {
+          if (data.data[0].type == 1) {
+            alert('manager');
+            this.appComponent.displayNextPage(1);
+          } else {
+            alert('user');
+            this.appComponent.displayNextPage(2);
+          }
+        } else {
+          alert('Incorect Password');
+        }
+      });
   }
 }

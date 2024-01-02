@@ -57,7 +57,7 @@ export class ManagerDashComponent implements OnInit {
   navigateComponent(value: string) {
     switch (value) {
       case 'dashboard':
-        this.router.navigate(['/chart']);
+        this.router.navigate(['/m-dashboard']);
         break;
       case 'inquiries':
         this.router.navigate(['/inquire-registration']);

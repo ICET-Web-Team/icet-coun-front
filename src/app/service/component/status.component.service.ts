@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CounsellorDashComponent } from "../../pages/counsellor-dash/counsellor-dash.component";
 import { ManagerDashComponent } from "../../pages/manager-dash/manager-dash.component";
+import { LoginComponent } from "../../pages/login/login.component";
 
 
 @Injectable({
@@ -15,9 +16,9 @@ export class StatusComponentService {
       // {
       //  component : LoginComponent
       // },
-      {
-        component: ManagerDashComponent,
-      },
+      // {
+      //   component: ManagerDashComponent,
+      // },
       {
         component: CounsellorDashComponent,
       },
